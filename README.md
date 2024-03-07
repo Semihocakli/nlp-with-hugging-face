@@ -11,8 +11,29 @@
 
 - [Metin Üretme Projesi](https://github.com/Semihocakli/nlp-with-hugging-face/tree/main/4.)
 
-- [LLM Projesi]()
+- [LLM Projesi](https://huggingface.co/ocaklisemih/mistral-7b-dolly)
 
+## DistilBERT Emotion Recognition Model
+
+Bu Hugging Face modeli, duyguları tanımlamak için DistilBERT modelini kullanır. Model, metin girdisine dayalı olarak duyguları tahmin etme yeteneğine sahiptir.
+
+### Kullanım
+
+Modeli kullanmak için aşağıdaki adımları takip edebilirsiniz.
+
+```python
+from transformers import pipeline
+
+# Duygu tanıma modelini yükle
+emotion_model = pipeline("sentiment-analysis", model="ocaklisemih/distilbert-emotion")
+
+# Metin üzerinde duyguyu tahmin et
+text = "Bugün harika bir gün!"
+emotion = emotion_model(text)
+
+print(emotion)
+```
+---
 
 ## NER Demo
 
@@ -42,28 +63,6 @@ print(entities)
 ```
 ---
 
-## DistilBERT Emotion Recognition Model
-
-Bu Hugging Face modeli, duyguları tanımlamak için DistilBERT modelini kullanır. Model, metin girdisine dayalı olarak duyguları tahmin etme yeteneğine sahiptir.
-
-### Kullanım
-
-Modeli kullanmak için aşağıdaki adımları takip edebilirsiniz.
-
-```python
-from transformers import pipeline
-
-# Duygu tanıma modelini yükle
-emotion_model = pipeline("sentiment-analysis", model="ocaklisemih/distilbert-emotion")
-
-# Metin üzerinde duyguyu tahmin et
-text = "Bugün harika bir gün!"
-emotion = emotion_model(text)
-
-print(emotion)
-```
----
-
 ## Multilingual XLM-RoBERTa for Named Entity Recognition (NER)
 
 Bu Hugging Face modeli, çok dilli metinler üzerinde adlandırılmış varlık tanıma (NER) görevi için XLM-RoBERTa modelini kullanır. Model, farklı dillerdeki metinlerdeki adlandırılmış varlıkları tanımlama yeteneğine sahiptir.
@@ -85,4 +84,21 @@ entities = ner_model(text)
 print(entities)
 ```
 ---
+## Mistral-7B-Dolly: Turkish Language Model
 
+Bu Hugging Face modeli, Türkçe dilinde geniş bir dil modeli olan Mistral-7B-Dolly'yi içermektedir.
+
+### Kullanım
+
+Modeli kullanmak için aşağıdaki adımları takip edebilirsiniz.
+
+```python
+from transformers import pipeline
+
+# Dil modelini yükle
+language_model = pipeline("text-generation", model="ocaklisemih/mistral-7b-dolly")
+
+# Metin üret
+generated_text = language_model("Merhaba, bu bir örnek metindir. ")
+print(generated_text)
+```
