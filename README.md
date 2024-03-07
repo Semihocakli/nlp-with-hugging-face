@@ -41,8 +41,6 @@ entities = ner_model(text)
 print(entities)
 ```
 ---
----
----
 
 ## DistilBERT Emotion Recognition Model
 
@@ -64,8 +62,6 @@ emotion = emotion_model(text)
 
 print(emotion)
 ```
----
----
 ---
 
 ## Multilingual XLM-RoBERTa for Named Entity Recognition (NER)
@@ -89,5 +85,4 @@ entities = ner_model(text)
 print(entities)
 ```
 ---
----
----
+
